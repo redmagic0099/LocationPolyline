@@ -157,5 +157,5 @@ public class LogDetail extends AppCompatActivity implements LocationListener, On
         polyline.setColor(Color.rgb(red,green,blue));
         polyline.setWidth(7);
     }
-    
+
 }
