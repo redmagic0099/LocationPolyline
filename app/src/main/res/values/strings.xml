@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">旅ログ</string>
+    <string name="map_key" translatable="false">AIzaSyBlZ0Iq2cQ4G96kMlqWdtAtrBJb5a2bls8</string>
+    <string name="bt_search">検索</string>
+    <string name="tv_title">タイトル</string>
+    <string name="tv_start">スタート</string>
+    <string name="tv_goal">ゴール</string>
+    <string name="tv_comment">コメント</string>
+    <string name="bt_save">保存</string>
+    <string name="bt_clear">削除</string>
+    <string name="bt_share">共有</string>
+
+    <string name="dlg_msg_comment">コメント：</string>
+    <string name="dlg_title">タイトル：</string>
+    <string name="dlg_msg_start">スタート：</string>
+    <string name="dlg_msg_goal">ゴール：</string>
+    <string name="msg_send_before">サーバーにデータ送信します</string>
+    <string name="msg_send_after">サーバーにデータが送信しました</string>
+    <string name="msg_parse_before">サーバーからの返信内容の解析を開始します</string>
+    <string name="msg_parse_after">サーバーからの返信内容の解析が終了しました</string>
+    <string name="msg_err_send">サーバーからの通信に失敗しました。もう一度送信をお願いします。</string>
+    <string name="msg_err_timeout">サーバー通信がタイムアウトしました。もう一度お願いします</string>
+    <string name="msg_err_parse">サーバーからの返信内洋の解析に失敗しました。もう一度送信をお願いします。</string>
+    <string name="msg_input_success">記事の登録が完了しました</string>
+</resources>
