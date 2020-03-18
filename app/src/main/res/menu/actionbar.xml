@@ -7,6 +7,5 @@
         android:id="@+id/menuBrowse"
         android:icon="@android:drawable/ic_dialog_map"
         android:title="@string/bt_search"
-        android:onClick="onFinAll"
         app:showAsAction="always|withText"/>
 </menu>

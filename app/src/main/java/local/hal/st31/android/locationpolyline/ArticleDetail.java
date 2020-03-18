@@ -88,10 +88,10 @@ public class ArticleDetail extends AppCompatActivity implements LocationListener
 
         System.out.println(latLngList);
 
-        tvStart.setText(arrayList.get(2).toString());
-        tvGoal.setText(arrayList.get(3).toString());
-        tvComment.setText(arrayList.get(6).toString());
-        tvTitle.setText(arrayList.get(1).toString());
+        tvStart.setText("スタート：" + arrayList.get(2).toString());
+        tvGoal.setText("ゴール：" + arrayList.get(3).toString());
+        tvComment.setText("コメント：" + arrayList.get(6).toString());
+        tvTitle.setText("タイトル：" + arrayList.get(1).toString());
     }
 
     @Override

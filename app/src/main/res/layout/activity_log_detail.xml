@@ -65,6 +65,13 @@ tools:context=".LogDetail">
         android:onClick="onBtShareClick"
         android:text="@string/bt_share"/>
 
+    <Button
+        android:id="@+id/bt_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onBtShareClick"
+        android:text="@string/bt_clear"/>
+
 </LinearLayout>
 
 </RelativeLayout>

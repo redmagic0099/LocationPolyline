@@ -17,8 +17,10 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
 //    SeekBar seekWidth,seekRed,seekGreen,seekBlue;
     Button btDraw,btClear,btShow;
     LocationManager locationManager;
+    LatLng mapLatLng = new LatLng(35.691574,139.6704647);
 
     Polyline polyline = null;
     List<LatLng> latLngList = new ArrayList<>();
@@ -163,13 +166,29 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
 
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.actionbar,menu);
-//
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case android.R.id.home:
+                this.finish();
+                break;
+            case R.id.menuBrowse:
+                Intent intent = new Intent(getApplicationContext(), ArticlesList.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void locationStart() {
         Log.d("debug","locationStart()");
@@ -227,6 +246,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
     @Override
     public void onMapReady(GoogleMap googleMap) {
         gMap = googleMap;
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapLatLng,9));
         gMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng latLng) {

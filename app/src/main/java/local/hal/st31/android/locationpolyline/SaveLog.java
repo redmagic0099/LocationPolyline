@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -34,6 +37,7 @@ public class SaveLog<btJson> extends AppCompatActivity {
         int size = Integer.parseInt(strSize);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save_log);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etTitle = findViewById(R.id.etTitle);
         etStart = findViewById(R.id.etStart);
@@ -54,6 +58,28 @@ public class SaveLog<btJson> extends AppCompatActivity {
         jsonArrayLongitude  = new JSONArray(strLongitudeList);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case android.R.id.home:
+                this.finish();
+                break;
+            case R.id.menuBrowse:
+                Intent intent = new Intent(getApplicationContext(), ArticlesList.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public void onJsonButtonClick(View view) {
 

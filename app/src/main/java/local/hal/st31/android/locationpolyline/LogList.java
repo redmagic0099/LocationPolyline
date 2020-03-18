@@ -27,18 +27,35 @@ public class LogList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         _listView = findViewById(R.id.lvLogList);
         _listView.setOnItemClickListener(new ListItemClickListener());
 
         _helper = new DatabaseHelper(getApplicationContext());
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu){
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.actionbar, menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case android.R.id.home:
+                this.finish();
+                break;
+            case R.id.menuBrowse:
+                Intent intent = new Intent(getApplicationContext(), ArticlesList.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onResume(){

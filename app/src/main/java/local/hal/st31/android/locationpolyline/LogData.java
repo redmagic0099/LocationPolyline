@@ -1,9 +1,5 @@
 package local.hal.st31.android.locationpolyline;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

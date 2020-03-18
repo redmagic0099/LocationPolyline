@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">旅ログ</string>
-    <string name="map_key" translatable="false">API KEY</string>
+    <string name="map_key" translatable="false">AIzaSyBlZ0Iq2cQ4G96kMlqWdtAtrBJb5a2bls8</string>
     <string name="bt_search">検索</string>
     <string name="tv_title">タイトル</string>
     <string name="tv_start">スタート</string>
